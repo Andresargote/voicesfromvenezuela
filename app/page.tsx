@@ -1,95 +1,79 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Balancer from 'react-wrap-balancer';
+import styles from './page.module.css';
+import { sourceCodePro } from './fonts';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <div className={styles.header_container}>
+            <h1 className={styles.header_title}>
+              <Link href='/'>Voices from Venezuela</Link>
+            </h1>
+            <Link href='/share' className={styles.cta_btn}>
+              Comparte tu testimonio
+            </Link>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
+      </header>
+      <main className={styles.main}>
+        <div className={styles.container}>
+          <h2 className={styles.main_subtitle}>
+            <Balancer>
+              A Collection of Anonymous Voices Reflecting the Situation in Venezuela
+            </Balancer>
           </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <p className={`${styles.main_goal}`}>
+            <Balancer>
+              This is a collection of anonymous voices reflecting the situation in
+              Venezuela. The goal is to provide a platform for people to share their
+              thoughts and experiences without fear of retaliation.
+            </Balancer>
           </p>
-        </a>
-      </div>
-    </main>
+          <div>
+            <ul className={styles.testimonials_list}>
+              <li className={styles.testimonials_list_item}>
+                <time dateTime='' className={sourceCodePro.className}>
+                  31 Sept 2024
+                </time>
+                <p>
+                  <Balancer>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    suscipit, nunc sit amet aliquam ultricies, nisl velit ultrices libero,
+                    nec tincidunt purus nunc nec justo.
+                  </Balancer>
+                </p>
+              </li>
+              <li className={styles.testimonials_list_item}>
+                <time dateTime='' className={sourceCodePro.className}>
+                  31 Sept 2024
+                </time>
+                <p>
+                  <Balancer>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    suscipit, nunc sit amet aliquam ultricies, nisl velit ultrices libero,
+                    nec tincidunt purus nunc nec justo.
+                  </Balancer>
+                </p>
+              </li>
+              <li className={styles.testimonials_list_item}>
+                <time dateTime='' className={sourceCodePro.className}>
+                  31 Sept 2024
+                </time>
+                <p>
+                  <Balancer>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                    suscipit, nunc sit amet aliquam ultricies, nisl velit ultrices libero,
+                    nec tincidunt purus nunc nec justo.
+                  </Balancer>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </>
   );
 }
