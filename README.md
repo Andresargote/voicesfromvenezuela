@@ -1,57 +1,59 @@
 # Voices from Venezuela
 
-### 🌍 **Una plataforma para voces anónimas desde Venezuela**
+### 🌍 **A platform for anonymous voices from Venezuela**
 
-**Voices from Venezuela** es una colección de testimonios anónimos que reflejan la situación actual en Venezuela. El objetivo de este proyecto es proporcionar una plataforma donde las personas puedan compartir sus pensamientos y experiencias sin temor a represalias.
+_[Lee este documento en español](README.es.md)_
 
-## 📜 **Descripción**
+**Voices from Venezuela** is a collection of anonymous testimonies that reflect the current situation in Venezuela. The objective of this project is to provide a platform where people can share their thoughts and experiences without fear of reprisals.
 
-En medio de la crisis que atraviesa Venezuela, muchas voces han sido silenciadas por la censura, la represión y el miedo. **Voices from Venezuela** nace como un espacio seguro para que los venezolanos puedan expresar lo que viven, sienten y piensan, sin exponerse a las amenazas que enfrentan en su vida diaria. Este proyecto busca visibilizar la realidad del país a través de sus protagonistas anónimos.
+## 📜 **Description**
 
-## 🎯 **Objetivo**
+Amidst the crisis in Venezuela, many voices have been silenced by censorship, repression, and fear. **Voices from Venezuela** is born as a safe space for Venezuelans to express what they live, feel, and think, without exposing themselves to the threats they face in their daily lives. This project seeks to make the reality of the country visible through its anonymous protagonists.
 
-- **Crear conciencia** sobre la situación en Venezuela mediante testimonios de primera mano.
-- **Proteger la identidad** de los participantes, asegurando que sus voces sean escuchadas sin poner en riesgo su seguridad.
-- **Promover la solidaridad y el apoyo** de la comunidad internacional, sensibilizando a través de relatos personales.
-- **Contribuir al diálogo y la reconciliación** en Venezuela, recopilando memorias que puedan ser fundamentales para un futuro de paz y justicia.
+## 🎯 **Objective**
 
-## 🚀 **Tecnologías Utilizadas**
+- **Raise awareness** about the situation in Venezuela through first-hand testimonies.
+- **Protect the identity** of the participants, ensuring that their voices are heard without jeopardizing their safety.
+- **Promote solidarity and support** from the international community, sensitizing through personal stories.
+- **Contribute to dialogue and reconciliation** in Venezuela, collecting memories that may be crucial for a future of peace and justice.
 
-- **Next.js**: Framework para React que permite la generación de aplicaciones web rápidas y escalables.
-- **Next-Intl**: Manejador de internacionalización que facilita la gestión de múltiples idiomas en la aplicación.
-- **CSS Modules**: Para un estilo modular y reutilizable en la aplicación.
+## 🚀 **Technologies Used**
 
-## 🛠️ **Cómo Ejecutar el Proyecto Localmente**
+- **Next.js**: React framework that allows the generation of fast and scalable web applications.
+- **Next-Intl**: Internationalization handler that facilitates the management of multiple languages in the application.
+- **CSS Modules**: For modular and reusable styling in the application.
 
-1. Clona el repositorio:
+## 🛠️ **How to Run the Project Locally**
+
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/Andresargote/voicesfromvenezuela.git
    cd voices-from-venezuela
    ```
 
-2. Instala las dependencias:
+2. Install the dependencies:
 
    ```bash
    npm install
    ```
 
-3. Ejecuta el servidor de desarrollo:
+3. Run the development server:
 
    ```bash
    npm run dev
    ```
 
-4. Abre tu navegador en `http://localhost:3000` para ver el proyecto en acción.
+4. Open your browser at `http://localhost:3000` to see the project in action.
 
-## 🤝 **Contribuciones**
+## 🤝 **Contributions**
 
-¡Contribuciones son bienvenidas! Si deseas mejorar el proyecto o añadir nuevas funcionalidades, siéntete libre de abrir un pull request o crear un issue.
+Contributions are welcome! If you want to improve the project or add new features, feel free to open a pull request or create an issue.
 
-## 📜 **Licencia**
+## 📜 **License**
 
-Este proyecto está bajo la licencia MIT. Para más detalles, revisa el archivo [LICENSE](LICENSE).
+This project is licensed under the MIT License. For more details, please review the [LICENSE](LICENSE) file.
 
-## 💬 **Contacto**
+## 💬 **Contact**
 
-Para preguntas o sugerencias, puedes contactar a [Andres Argote](https://github.com/Andresargote).
+For questions or suggestions, you can contact [Andres Argote](https://github.com/Andresargote).
