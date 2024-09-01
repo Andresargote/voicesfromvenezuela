@@ -1,6 +1,16 @@
-import { getLocale, getMessages, getTranslations } from 'next-intl/server';
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import '../ui/styles/globals.css';
+import '../../ui/styles/globals.css';
+import { routing } from '../../i18n/routing';
+import { ReactNode } from 'react';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata() {
   const t = await getTranslations('metadata');
@@ -46,11 +56,11 @@ export async function generateMetadata() {
 }
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
+  params: { locale: string };
 };
-
-export default async function RootLayout({ children }: Props) {
-  const locale = await getLocale();
+export default async function RootLayout({ children, params: { locale } }: Props) {
+  unstable_setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
