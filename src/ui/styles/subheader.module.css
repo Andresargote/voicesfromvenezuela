@@ -1,0 +1,32 @@
+.subheader_title {
+  background-color: var(--color-red);
+}
+
+.subheader_title h3 {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-white);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.subheader_list {
+  background-color: var(--bg-black);
+}
+
+.subheader_list ul {
+  display: flex;
+  justify-content: space-between;
+
+  list-style: none;
+  overflow-x: hidden;
+}
+
+.subheader_list ul li {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-white);
+  white-space: nowrap;
+  padding: 0.5rem 0.5rem;
+}

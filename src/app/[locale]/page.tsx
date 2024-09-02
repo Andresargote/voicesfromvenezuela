@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import Header from '@/src/ui/components/header';
 import Link from 'next/link';
 import { Testimonials } from '@/src/ui/components/testimonial/page';
+import { Subheader } from '@/src/ui/components/subheader';
 
 export default async function Home({
   params,
@@ -39,6 +40,7 @@ export default async function Home({
   return (
     <>
       <Header />
+      <Subheader />
       <main className={styles.main}>
         <section className={styles.cta}>
           <h2 className={styles.cta_title}>
