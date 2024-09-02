@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form textarea {
+  padding: 1rem;
+  resize: none;
+  height: 162px;
+  color: var(--color-p-black);
+  background-color: #ececec;
+  border: 1px solid var(--color-shadow);
+  resize: none;
+  font-family: 'Lato', sans-serif;
+}
+
+.form button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  box-shadow: 0px 4px 4px var(--color-shadow);
+}
+
+.form p {
+  color: var(--color-gray);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+.form_warning {
+  background-color: var(--color-red);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.form_warning p {
+  color: var(--color-white);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 160%;
+}

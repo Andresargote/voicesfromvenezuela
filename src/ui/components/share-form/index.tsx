@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import styles from '../../styles/page.module.css';
+import styles from '../../styles/share-form.module.css';
 import Balancer from 'react-wrap-balancer';
 import { addTestimonial } from '@/src/actions/action';
 

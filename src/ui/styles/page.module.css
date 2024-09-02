@@ -1,150 +1,39 @@
 .container {
-  max-width: 598px;
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-.header {
-  padding: 0.5rem 1.5rem;
-  background-color: var(--color-yellow);
-}
-
-.header_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  min-height: 58px;
-}
-
-.header_title {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.header_title a {
-  text-decoration: none;
-  color: var(--color-p-black);
-}
-
-.main {
-  padding: 1.5rem 1.5rem;
-}
-
-.main_subtitle {
-  color: var(--color-gray);
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 120%;
-  letter-spacing: -0.75px;
-  margin-bottom: 1rem;
-}
-
-.main_goal {
-  color: var(--color-gray);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 160%;
-  margin-bottom: 3rem;
-}
-
-.cta_btn {
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--color-blue);
-  color: var(--color-white);
-  font-size: 1rem;
-  font-weight: 700;
-  border: none;
-
-  cursor: pointer;
-  width: auto;
-  text-decoration: none;
-}
-
-.testimonials_list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-
-  border: 1px solid #f1f0f0;
-}
-
-.testimonials_list_item {
-  border-bottom: 1px solid #f1f0f0;
-  position: relative;
-}
-
-.testimonials_list_item p {
-  color: var(--color-p-black);
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 160%;
-  margin-bottom: 1rem;
   padding: 1.5rem;
 }
 
-.testimonials_list_item time {
+.main {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.cta {
+  padding: 2rem 1.5rem;
+}
+
+.cta_title {
   color: var(--color-gray);
-  font-size: 0.8rem;
-  font-weight: 400;
-  padding: 0.3rem 0.5rem;
-  position: absolute;
-  top: -16px;
-  left: -16px;
-  background-color: var(--color-blue);
-  color: var(--color-white);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.75px;
+  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
-.testimonials_list .testimonials_list_item:last-child {
-  border-bottom: none;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.form textarea {
-  padding: 1rem;
-  resize: none;
-  height: 162px;
-  color: var(--color-p-black);
-  background-color: #ececec;
-  border: 1px solid var(--color-shadow);
-  resize: none;
-  font-family: 'Lato', sans-serif;
-}
-
-.form button {
-  padding: 0.75rem 1.5rem;
+.cta_btn {
+  padding: 1rem 1.5rem;
   background-color: var(--color-blue);
   color: var(--color-white);
   font-size: 1rem;
   font-weight: 700;
   border: none;
+
   cursor: pointer;
   width: auto;
+  text-decoration: underline;
+
   box-shadow: 0px 4px 4px var(--color-shadow);
-}
-
-.form p {
-  color: var(--color-gray);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 160%;
-}
-
-.form_warning {
-  background-color: var(--color-red);
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-}
-
-.form_warning p {
-  color: var(--color-white);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 160%;
 }

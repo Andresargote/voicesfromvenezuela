@@ -1,0 +1,43 @@
+.testimonials {
+  padding: 2.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+
+  list-style: none;
+}
+
+.testimonial {
+  list-style: none;
+}
+
+.testimonial_content {
+  padding: 1rem;
+  border-top: 1px solid var(--color-gray);
+  border-right: 1px solid var(--color-gray);
+  border-left: 1px solid var(--color-gray);
+  background-color: var(--color-white);
+  box-shadow: 0px 4px 4px var(--color-shadow);
+}
+
+.testimonial_content p {
+  font-size: 1.125rem;
+  line-height: 160%;
+  font-weight: 400;
+}
+
+.testimonial_footer {
+  border-top: 1px solid var(--color-gray);
+}
+
+.testimonial_footer time {
+  font-size: 0.875rem;
+  font-weight: 300;
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-right: 1px solid var(--color-gray);
+  border-bottom: 1px solid var(--color-gray);
+  border-left: 1px solid var(--color-gray);
+}
