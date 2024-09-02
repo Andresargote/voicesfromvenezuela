@@ -1,6 +1,5 @@
 import Balancer from 'react-wrap-balancer';
 import styles from '../../ui/styles/page.module.css';
-import { sourceCodePro } from '../../fonts';
 import { createClient } from '../../utils/supabase/server';
 import { getTranslations } from 'next-intl/server';
 import Header from '@/src/ui/components/header';
