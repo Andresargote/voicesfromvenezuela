@@ -19,7 +19,6 @@ export async function generateMetadata() {
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
-    viewport: 'width=device-width, initial-scale=1',
     author: 'Andres Argote',
     creator: 'Andres Argote',
     publisher: 'Andres Argote',
@@ -66,7 +65,9 @@ export default async function RootLayout({ children, params: { locale } }: Props
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

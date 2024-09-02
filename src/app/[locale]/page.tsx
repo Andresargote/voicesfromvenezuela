@@ -1,9 +1,10 @@
 import Balancer from 'react-wrap-balancer';
 import styles from '../../ui/styles/page.module.css';
-import { sourceCodePro } from '../../fonts';
-import Link from 'next/link';
 import { createClient } from '../../utils/supabase/server';
 import { getTranslations } from 'next-intl/server';
+import Header from '@/src/ui/components/header';
+import Link from 'next/link';
+import { Testimonials } from '@/src/ui/components/testimonial/page';
 
 export default async function Home({
   params,
@@ -37,50 +38,26 @@ export default async function Home({
 
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.container}>
-          <div className={styles.header_container}>
-            <h1 className={styles.header_title}>
-              <Link href='/'>Voices from Venezuela</Link>
-            </h1>
-            <Link href='/share' className={styles.cta_btn}>
-              Comparte tu testimonio
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Header />
       <main className={styles.main}>
-        <div className={styles.container}>
-          <h2 className={styles.main_subtitle}>
-            <Balancer>{t('subtitle')}</Balancer>
+        <section className={styles.cta}>
+          <h2 className={styles.cta_title}>
+            <Balancer>{t('whatIs')}</Balancer>
           </h2>
-          <p className={`${styles.main_goal}`}>
-            <Balancer>{t('goal')}</Balancer>
-          </p>
-          <div>
-            {error && (
-              <p className={styles.error}>
-                <Balancer>{t('error')}</Balancer>
-              </p>
-            )}
-            {!error && formattedData?.length && (
-              <ul className={styles.testimonials_list}>
-                {formattedData?.map((d) => {
-                  return (
-                    <li key={d.id} className={styles.testimonials_list_item}>
-                      <time dateTime={d.created_at} className={sourceCodePro.className}>
-                        {d.formatted_date}
-                      </time>
-                      <p>
-                        <Balancer>{d.message}</Balancer>
-                      </p>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-          </div>
-        </div>
+          <Link className={styles.cta_btn} href='/compartir'>
+            Comparte tu historia
+          </Link>
+        </section>
+        <section>
+          {error && (
+            <p className={styles.error}>
+              <Balancer>{t('error')}</Balancer>
+            </p>
+          )}
+          {!error && formattedData?.length && (
+            <Testimonials formattedData={formattedData} />
+          )}
+        </section>
       </main>
     </>
   );

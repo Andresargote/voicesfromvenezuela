@@ -1,12 +1,11 @@
 {
   "metadata": {
     "title": "Voices from Venezuela",
-    "description": "Voices from Venezuela es una colección de voces anónimas que reflejan la situación en Venezuela. El objetivo es proporcionar una plataforma para que las personas compartan sus pensamientos y experiencias sin temor a represalias.",
+    "description": "Esta colección de testimonios anónimos ofrece una visión auténtica y sin censura de la realidad en Venezuela. Nuestra plataforma brinda un espacio seguro para que las personas compartan sus experiencias y perspectivas sin miedo a represalias.",
     "keywords": "Venezuela, Testimonios, Voces, Anónimas, Reflexiones, Situación, Crisis, Violencia, Miedo, Esperanza, Libertad, Democracia, Derechos Humanos, Dictadura, Represión, Censura, Corrupción, Pobreza, Hambre, Inflación, Migración, Exilio, Resistencia, Solidaridad, Apoyo, Comunidad Internacional, Ayuda Humanitaria, Sanciones, Elecciones, Referéndum, Constitución, Diálogo, Negociación, Paz, Justicia, Verdad, Memoria, Reconciliación, Reconstrucción, Futuro"
   },
   "home": {
-    "subtitle": "Una colección de voces anónimas que reflejan la situación en Venezuela",
-    "goal": "Esta es una colección de voces anónimas que reflejan la situación en Venezuela. El objetivo es proporcionar una plataforma para que las personas compartan sus pensamientos y experiencias sin temor a represalias.",
+    "whatIs": "Esta colección de testimonios anónimos ofrece una visión auténtica y sin censura de la realidad en Venezuela. Nuestra plataforma brinda un espacio seguro para que las personas compartan sus experiencias y perspectivas sin miedo a represalias.",
     "error": "Ocurrió un error al obtener los testimonios. Por favor, inténtalo de nuevo más tarde."
   }
 }

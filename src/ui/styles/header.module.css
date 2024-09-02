@@ -1,0 +1,23 @@
+.header {
+  background-color: var(--color-yellow);
+}
+
+.header_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header_title a {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-black);
+  display: flex;
+  flex-direction: column;
+}

@@ -6,7 +6,7 @@ export const routing = defineRouting({
   defaultLocale: 'en',
   pathnames: {
     '/': '/',
-    '/share': '/share',
+    '/compartir': '/compartir',
   },
 });
 
