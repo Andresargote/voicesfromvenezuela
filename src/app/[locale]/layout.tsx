@@ -19,7 +19,6 @@ export async function generateMetadata() {
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
-    viewport: 'width=device-width, initial-scale=1',
     author: 'Andres Argote',
     creator: 'Andres Argote',
     publisher: 'Andres Argote',
