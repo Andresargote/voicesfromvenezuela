@@ -17,7 +17,8 @@ export default async function Home({
   const { data, error } = await supabaseClient
     .from('testimonials')
     .select('*')
-    .filter('status', 'eq', 'approved');
+    .filter('status', 'eq', 'approved')
+    .order('created_at', { ascending: false });
 
   const formattedData = data?.map((d) => ({
     ...d,
