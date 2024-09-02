@@ -1,6 +1,13 @@
 .select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   background-color: var(--color-blue);
   color: var(--color-white);
   padding: 0.5rem 1rem;
+  -webkit-padding-start: 0.5rem;
+  -webkit-padding-end: 1rem;
   border: none;
+  font-size: 0.875rem;
+  border-radius: 0px;
 }
