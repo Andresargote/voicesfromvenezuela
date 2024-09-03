@@ -26,15 +26,18 @@ export async function generateMetadata() {
     creator: 'Andres Argote',
     publisher: 'Andres Argote',
     robots: 'index, follow',
-    canonical: `${process.env.VERCEL_URL}`,
+    hreflang: routing.locales.map((locale) => ({
+      lang: locale,
+      url: `https://www.voicesfromvenezuela.com/${locale}`,
+    })),
     openGraph: {
       title: t('title'),
       description: t('description'),
       type: 'website',
-      url: `${process.env.VERCEL_URL}`,
+      url: 'https://www.voicesfromvenezuela.com',
       images: [
         {
-          url: `${process.env.VERCEL_URL}/api/og`,
+          url: `https://www.voicesfromvenezuela.com/api/og`,
           width: 1200,
           height: 630,
           alt: t('title'),
@@ -43,14 +46,14 @@ export async function generateMetadata() {
       site_name: 'Voices from Venezuela',
     },
     twitter: {
+      card: 'summary_large_image',
+      creator: '@andresargball',
       title: t('title'),
       description: t('description'),
-      images: [
-        {
-          url: `${process.env.VERCEL_URL}/api/og`,
-          alt: t('title'),
-        },
-      ],
+      images: {
+        url: `https://www.voicesfromvenezuela.com/api/og`,
+        alt: t('title'),
+      },
     },
     icons: {
       icon: ['/assets/favicon.ico'],
@@ -70,7 +73,6 @@ export default async function RootLayout({ children, params: { locale } }: Props
 
   return (
     <html lang={locale}>
-      <meta property='og:title' content='test title og' />
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Header />
