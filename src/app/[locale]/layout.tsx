@@ -10,6 +10,7 @@ import { ReactNode } from 'react';
 import Header from '@/src/ui/components/header';
 import styles from '../../ui/styles/page.module.css';
 import { Analytics } from '@vercel/analytics/react';
+import ogImage from '../../../public/assets/og.jpg';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -37,9 +38,9 @@ export async function generateMetadata() {
       url: 'https://www.voicesfromvenezuela.com',
       images: [
         {
-          url: 'https://www.voicesfromvenezuela.com/assets/og.jpg',
-          width: 1200,
-          height: 630,
+          url: ogImage.src,
+          width: ogImage.width,
+          height: ogImage.height,
           alt: t('title'),
         },
       ],
@@ -51,7 +52,7 @@ export async function generateMetadata() {
       title: t('title'),
       description: t('description'),
       images: {
-        url: 'https://www.voicesfromvenezuela.com/assets/og.jpg',
+        url: ogImage.src,
         alt: t('title'),
       },
     },
