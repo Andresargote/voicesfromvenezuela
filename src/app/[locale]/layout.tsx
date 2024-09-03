@@ -7,6 +7,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import '../../ui/styles/globals.css';
 import { routing } from '../../i18n/routing';
 import { ReactNode } from 'react';
+import Header from '@/src/ui/components/header';
+import styles from '../../ui/styles/page.module.css';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -23,28 +25,27 @@ export async function generateMetadata() {
     creator: 'Andres Argote',
     publisher: 'Andres Argote',
     robots: 'index, follow',
-    canonical: 'https://voicesfromvenezuela.com',
+    canonical: `${process.env.VERCEL_URL}`,
     openGraph: {
       title: t('title'),
       description: t('description'),
       type: 'website',
-      url: 'https://voicesfromvenezuela.com',
-      /*image: {
-        url: 'https://voicesfromvenezuela.com/images/og-image.jpg',
+      url: `${process.env.VERCEL_URL}`,
+      image: {
+        url: `${process.env.VERCEL_URL}/api/og`,
         width: 1200,
         height: 630,
         alt: t('title'),
-      },todo */
+      },
       site_name: 'Voices from Venezuela',
     },
     twitter: {
-      /*card: 'summary_large_image', todo*/
       title: t('title'),
       description: t('description'),
-      /*image: {
-        url: 'https://voicesfromvenezuela.com/images/og-image.jpg',
+      image: {
+        url: `${process.env.VERCEL_URL}/api/og`,
         alt: t('title'),
-      },todo */
+      },
     },
     icons: {
       icon: ['/assets/favicon.ico'],
@@ -66,7 +67,11 @@ export default async function RootLayout({ children, params: { locale } }: Props
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
+          <Header />
           {children}
+          <footer className={styles.footer}>
+            <p>Creado por Andres Argote</p>
+          </footer>
         </NextIntlClientProvider>
       </body>
     </html>
