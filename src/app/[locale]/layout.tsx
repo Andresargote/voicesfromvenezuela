@@ -56,7 +56,7 @@ export async function generateMetadata() {
       },
     },
     icons: {
-      icon: ['/assets/favicon.ico'],
+      icon: ['/assets/favicon-new.ico'],
       apple: ['/assets/apple-touch-icon.png'],
       shortcut: ['/assets/apple-touch-icon.png'],
     },
