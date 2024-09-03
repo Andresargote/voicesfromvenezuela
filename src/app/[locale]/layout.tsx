@@ -70,6 +70,7 @@ export default async function RootLayout({ children, params: { locale } }: Props
 
   return (
     <html lang={locale}>
+      <meta property='og:title' content='test title og' />
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <Header />
