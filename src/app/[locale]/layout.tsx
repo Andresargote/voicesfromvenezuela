@@ -37,7 +37,7 @@ export async function generateMetadata() {
       url: 'https://www.voicesfromvenezuela.com',
       images: [
         {
-          url: `https://www.voicesfromvenezuela.com/assets/og.png`,
+          url: `https://www.voicesfromvenezuela.com/assets/og.jpg`,
           width: 1200,
           height: 630,
           alt: t('title'),
@@ -51,7 +51,7 @@ export async function generateMetadata() {
       title: t('title'),
       description: t('description'),
       images: {
-        url: `https://www.voicesfromvenezuela.com/assets/og.png`,
+        url: `https://www.voicesfromvenezuela.com/assets/og.jpg`,
         alt: t('title'),
       },
     },
