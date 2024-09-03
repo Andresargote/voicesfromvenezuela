@@ -23,7 +23,7 @@ export default async function Home({
 
   const formattedData = data?.map((d) => ({
     ...d,
-    message: locale === 'es' ? d.message : d.message_en,
+    message: locale === 'es' ? d.message : d[`message_${locale}`],
     formatted_date: new Date(d.created_at).toLocaleDateString(
       locale === 'es' ? 'es-VE' : 'en-US',
       {
@@ -33,6 +33,8 @@ export default async function Home({
       }
     ),
   }));
+
+  console.log();
 
   const t = await getTranslations('home');
 
