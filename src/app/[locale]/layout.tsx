@@ -9,6 +9,7 @@ import { routing } from '../../i18n/routing';
 import { ReactNode } from 'react';
 import Header from '@/src/ui/components/header';
 import styles from '../../ui/styles/page.module.css';
+import { Analytics } from '@vercel/analytics/react';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -31,21 +32,25 @@ export async function generateMetadata() {
       description: t('description'),
       type: 'website',
       url: `${process.env.VERCEL_URL}`,
-      image: {
-        url: `${process.env.VERCEL_URL}/api/og`,
-        width: 1200,
-        height: 630,
-        alt: t('title'),
-      },
+      images: [
+        {
+          url: `${process.env.VERCEL_URL}/api/og`,
+          width: 1200,
+          height: 630,
+          alt: t('title'),
+        },
+      ],
       site_name: 'Voices from Venezuela',
     },
     twitter: {
       title: t('title'),
       description: t('description'),
-      image: {
-        url: `${process.env.VERCEL_URL}/api/og`,
-        alt: t('title'),
-      },
+      images: [
+        {
+          url: `${process.env.VERCEL_URL}/api/og`,
+          alt: t('title'),
+        },
+      ],
     },
     icons: {
       icon: ['/assets/favicon.ico'],
@@ -72,6 +77,7 @@ export default async function RootLayout({ children, params: { locale } }: Props
           <footer className={styles.footer}>
             <p>Creado por Andres Argote</p>
           </footer>
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
