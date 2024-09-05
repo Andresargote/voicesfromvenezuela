@@ -1,6 +1,7 @@
 import { merriweather } from '@/src/fonts';
 import Balancer from 'react-wrap-balancer';
 import styles from '../../styles/testimonials.module.css';
+import ScreenShot from '../screen-shot';
 
 type Props = {
   formattedData: {
@@ -17,7 +18,7 @@ export function Testimonials({ formattedData }: Props) {
       {formattedData?.map((d) => {
         return (
           <li key={d.id} className={styles.testimonial}>
-            <div className={styles.testimonial_content}>
+            <div className={styles.testimonial_content} id={d.id}>
               <p>
                 <Balancer>{d.message}</Balancer>
               </p>
@@ -26,6 +27,7 @@ export function Testimonials({ formattedData }: Props) {
               <time dateTime={d.created_at} className={merriweather.className}>
                 {d.formatted_date}
               </time>
+              <ScreenShot elementId={d.id} />
             </div>
           </li>
         );

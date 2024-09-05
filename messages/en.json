@@ -7,5 +7,8 @@
   "home": {
     "whatIs": "This collection of anonymous testimonials offers an authentic and uncensored view of the reality in Venezuela. Our platform provides a safe space for people to share their experiences and perspectives without fear of retaliation.",
     "error": "An error ocurred while fetching the testimonials. Please try again later."
+  },
+  "screenShot": {
+    "title": "Screen Shot"
   }
 }

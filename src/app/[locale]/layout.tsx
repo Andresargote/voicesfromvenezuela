@@ -79,7 +79,7 @@ export default async function RootLayout({ children, params: { locale } }: Props
           <Header />
           {children}
           <footer className={styles.footer}>
-            <p>Creado por Andres Argote</p>
+            <p>Creada por Andres Argote</p>
           </footer>
           <Analytics />
         </NextIntlClientProvider>
