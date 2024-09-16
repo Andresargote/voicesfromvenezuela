@@ -7,6 +7,10 @@ import { NextIntlClientProvider } from 'next-intl';
 import '../../ui/styles/globals.css';
 import { routing } from '../../i18n/routing';
 import { ReactNode } from 'react';
+import Header from '@/src/ui/components/header';
+import styles from '../../ui/styles/page.module.css';
+import { Analytics } from '@vercel/analytics/react';
+import ogImage from '../../../public/assets/og.jpg';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -23,28 +27,34 @@ export async function generateMetadata() {
     creator: 'Andres Argote',
     publisher: 'Andres Argote',
     robots: 'index, follow',
-    canonical: 'https://voicesfromvenezuela.com',
+    hreflang: routing.locales.map((locale) => ({
+      lang: locale,
+      url: `https://www.voicesfromvenezuela.com/${locale}`,
+    })),
     openGraph: {
       title: t('title'),
       description: t('description'),
       type: 'website',
-      url: 'https://voicesfromvenezuela.com',
-      /*image: {
-        url: 'https://voicesfromvenezuela.com/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: t('title'),
-      },todo */
+      url: 'https://www.voicesfromvenezuela.com',
+      images: [
+        {
+          url: ogImage.src,
+          width: ogImage.width,
+          height: ogImage.height,
+          alt: t('title'),
+        },
+      ],
       site_name: 'Voices from Venezuela',
     },
     twitter: {
-      /*card: 'summary_large_image', todo*/
+      card: 'summary_large_image',
+      creator: '@andresargball',
       title: t('title'),
       description: t('description'),
-      /*image: {
-        url: 'https://voicesfromvenezuela.com/images/og-image.jpg',
+      images: {
+        url: ogImage.src,
         alt: t('title'),
-      },todo */
+      },
     },
     icons: {
       icon: ['/assets/favicon.ico'],
@@ -66,7 +76,12 @@ export default async function RootLayout({ children, params: { locale } }: Props
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
+          <Header />
           {children}
+          <footer className={styles.footer}>
+            <p>Creada por Andres Argote</p>
+          </footer>
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

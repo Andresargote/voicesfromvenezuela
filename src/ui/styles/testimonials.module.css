@@ -9,6 +9,8 @@
 
 .testimonial {
   list-style: none;
+
+  height: fit-content;
 }
 
 .testimonial_content {
@@ -28,6 +30,8 @@
 
 .testimonial_footer {
   border-top: 1px solid var(--color-gray);
+  display: flex;
+  justify-content: space-between;
 }
 
 .testimonial_footer time {

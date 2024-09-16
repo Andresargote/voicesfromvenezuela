@@ -5,32 +5,45 @@ import Balancer from 'react-wrap-balancer';
 import { addTestimonial } from '@/src/actions/action';
 
 export function ShareForm() {
-  const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [form, setForm] = useState({
+    date: new Date().toISOString().split('T')[0],
+    testimonial: '',
+  });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
-      if (!message) {
+      if (!form.testimonial) {
         alert('Por favor, escribe un testimonio antes de enviar.');
         return;
       }
 
-      if (message.length < 10) {
+      if (form.testimonial.length < 10) {
         alert('Por favor, escribe un testimonio más largo.');
         return;
       }
 
-      if (message.length > 800) {
+      if (form.testimonial.length > 800) {
         alert('Por favor, escribe un testimonio más corto, de menos de 800 caracteres.');
         return;
       }
 
-      await addTestimonial(message);
+      await addTestimonial({
+        message: form.testimonial,
+        date: form.date,
+      });
       alert('¡Gracias por compartir tu testimonio! Será revisado y publicado pronto.');
-      setMessage('');
+      setForm({
+        date: new Date().toISOString().split('T')[0],
+        testimonial: '',
+      });
     } catch (error) {
       console.error(error);
       alert('Ha ocurrido un error al enviar tu testimonio. Por favor, intenta de nuevo.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -44,14 +57,37 @@ export function ShareForm() {
           </Balancer>
         </p>
       </div>
-      <textarea
-        value={message}
-        placeholder='Comparte tu testimonio'
-        onChange={(v) => {
-          setMessage(v.target.value);
+      <label htmlFor='date'>Fecha</label>
+      <input
+        type='date'
+        id='date'
+        max={new Date().toISOString().split('T')[0]}
+        min='2024-07-28'
+        value={form.date}
+        onChange={(e) => {
+          setForm({
+            ...form,
+            date: e.target.value,
+          });
         }}
-      ></textarea>
-      <button type='submit'>Enviar</button>
+      />
+
+      <label htmlFor='testimonial'>Testimonio</label>
+      <textarea
+        id='testimonial'
+        value={form.testimonial}
+        placeholder='Comparte tu testimonio'
+        onChange={(event) => {
+          setForm({
+            ...form,
+            testimonial: event.target.value,
+          });
+        }}
+      />
+
+      <button type='submit' disabled={isLoading}>
+        {isLoading ? 'Enviando...' : 'Enviar'}
+      </button>
       <p>
         <Balancer>
           Cuando envíes tu testimonio, este seguirá un proceso en cuatro pasos: primero,
