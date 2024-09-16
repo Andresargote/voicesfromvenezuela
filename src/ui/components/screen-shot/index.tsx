@@ -28,7 +28,7 @@ export default function ScreenShot({ elementId }: { elementId: string }) {
       onClick={doScreenShot}
       className={`${styles.screen_shot_btn} ${merriweather.className}`}
     >
-      📸 {t('title')}
+      {t('title')}
     </button>
   );
 }
