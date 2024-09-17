@@ -30,3 +30,22 @@
   white-space: nowrap;
   padding: 0.5rem 0.5rem;
 }
+
+.data_from {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0.2rem 1.5rem;
+}
+
+.data_from p {
+  font-size: 0.75rem;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
+
+.data_from p a {
+  text-decoration: none;
+  color: var(--color-blue);
+  text-decoration: underline;
+}

@@ -6,9 +6,14 @@
   },
   "home": {
     "whatIs": "Esta colección de testimonios anónimos ofrece una visión auténtica y sin censura de la realidad en Venezuela. Nuestra plataforma brinda un espacio seguro para que las personas compartan sus experiencias y perspectivas sin miedo a represalias.",
-    "error": "Ocurrió un error al obtener los testimonios. Por favor, inténtalo de nuevo más tarde."
+    "error": "Ocurrió un error al obtener los testimonios. Por favor, inténtalo de nuevo más tarde.",
+    "testimonialsCounter": "Testimonios compartidos"
   },
   "screenShot": {
     "title": "Descargar testimonio"
+  },
+  "subHeader": {
+    "title": "Secuestrados y asesinados por el régimen",
+    "from": "Datos obtenidos en"
   }
 }

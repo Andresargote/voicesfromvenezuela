@@ -1,28 +1,41 @@
 import { merriweather } from '@/src/fonts';
 import styles from '../../styles/subheader.module.css';
 import Marquee from 'react-fast-marquee';
+import { createClient } from '@/src/utils/supabase/server';
+import { getTranslations } from 'next-intl/server';
 
-export function Subheader() {
+export async function Subheader() {
+  const t = await getTranslations('subHeader');
+  const supabaseClient = createClient();
+  const { data, error } = await supabaseClient.from('sequestered').select('name');
+
+  if (error || data.length === 0) {
+    return null;
+  }
+
   return (
     <section>
       <div className={styles.subheader_title}>
-        <h3 className={merriweather.className}>
-          Secuestrados y asesinados por el régimen
-        </h3>
+        <h3 className={merriweather.className}>{t('title')}</h3>
       </div>
+
       <div className={styles.subheader_list}>
-        <Marquee autoFill={true} speed={20}>
+        <Marquee autoFill={true} speed={12}>
           <ul>
-            <li>Juan Pablo Pernalete (20 años)</li>
-            <li>Neomar Lander (17 años)</li>
-            <li>Miguel Castillo (27 años)</li>
-            <li>David Vallenilla (22 años)</li>
-            <li>Paúl Moreno (24 años)</li>
-            <li>Fabián Urbina (17 años)</li>
-            <li>Armando Cañizales (18 años)</li>
-            <li>Ramón Martínez (29 años)</li>
+            {data.map((s) => (
+              <li key={s.name}>{s.name}</li>
+            ))}
           </ul>
         </Marquee>
+      </div>
+
+      <div className={styles.data_from}>
+        <p>
+          {t('from')}{' '}
+          <a href='https://vzlalibre.my.canva.site/vzlalibre#page-2' target='_blank'>
+            vzlibre
+          </a>
+        </p>
       </div>
     </section>
   );
