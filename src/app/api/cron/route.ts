@@ -5,7 +5,7 @@ const REGEX = /^[^0-9]+$/;
 
 export async function GET() {
   try {
-    const response = await fetch(`${process.env.SCRAPPER_URL_SITE}`);
+    const response = await fetch(`https://vzlalibre.my.canva.site/vzlalibre#page-2`);
     const data = await response.text();
     const $ = cheerio.load(data);
 
