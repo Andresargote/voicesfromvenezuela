@@ -31,9 +31,10 @@
   border-top: 1px solid var(--color-gray);
   display: flex;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.testimonial_footer time {
+.testimonial_footer_info time {
   font-size: 0.875rem;
   font-weight: 300;
   background-color: var(--color-yellow);
@@ -43,4 +44,21 @@
   border-right: 1px solid var(--color-gray);
   border-bottom: 1px solid var(--color-gray);
   border-left: 1px solid var(--color-gray);
+  width: fit-content;
+}
+
+.testimonial_footer_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial_footer_info .testimonial_category {
+  width: fit-content;
+  font-size: 0.875rem;
+  font-weight: 300;
+  background-color: var(--color-yellow);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--color-gray);
+  border-top: none;
+  color: var(--color-black);
 }

@@ -9,6 +9,7 @@ type Props = {
     created_at: string;
     message: string;
     formatted_date: string;
+    category: string | null;
   }[];
 };
 
@@ -24,9 +25,18 @@ export function Testimonials({ formattedData }: Props) {
               </p>
             </div>
             <div className={styles.testimonial_footer}>
-              <time dateTime={d.created_at} className={merriweather.className}>
-                {d.formatted_date}
-              </time>
+              <div className={styles.testimonial_footer_info}>
+                {d.category && (
+                  <span
+                    className={`${styles.testimonial_category} ${merriweather.className}`}
+                  >
+                    {d.category}
+                  </span>
+                )}
+                <time dateTime={d.created_at} className={merriweather.className}>
+                  {d.formatted_date}
+                </time>
+              </div>
               <ScreenShot elementId={d.id} />
             </div>
           </li>

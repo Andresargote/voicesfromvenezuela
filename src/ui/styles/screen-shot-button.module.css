@@ -12,4 +12,6 @@
   background-color: var(--color-yellow);
   color: var(--color-black);
   cursor: pointer;
+
+  height: fit-content;
 }

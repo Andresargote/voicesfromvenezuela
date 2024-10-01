@@ -7,7 +7,15 @@
   "home": {
     "whatIs": "This collection of anonymous testimonials offers an authentic and uncensored view of the reality in Venezuela. Our platform provides a safe space for people to share their experiences and perspectives without fear of retaliation.",
     "error": "An error ocurred while fetching the testimonials. Please try again later.",
-    "testimonialsCounter": "Shared testimonials"
+    "testimonialsCounter": "Shared testimonials",
+    "category": {
+      "migration_exile": "Migration and Exile",
+      "repression_violence": "Repression and Violence",
+      "living_conditions": "Living Conditions",
+      "family_separation": "Family Separation",
+      "health_issues": "Health Issues",
+      "hopelessness_future": "Hopelessness and Future"
+    }
   },
   "screenShot": {
     "title": "Download testimony"

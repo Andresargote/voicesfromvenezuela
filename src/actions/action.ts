@@ -1,13 +1,16 @@
 'use server';
 
 import { createClient } from '../utils/supabase/server';
+import { TestimonialCategory } from '../utils/types';
 
 export async function addTestimonial({
   message,
   date,
+  category,
 }: {
   message: string;
   date: string;
+  category: TestimonialCategory;
 }) {
   const supabase = createClient();
 
@@ -15,6 +18,7 @@ export async function addTestimonial({
     original_message: message,
     created_at: new Date(date).toISOString(),
     status: 'pending',
+    category,
   });
 
   if (error) {

@@ -27,6 +27,7 @@
   cursor: pointer;
   width: auto;
   box-shadow: 0px 4px 4px var(--color-shadow);
+  margin-top: 1rem;
 }
 
 .form p {

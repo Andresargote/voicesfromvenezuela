@@ -7,7 +7,15 @@
   "home": {
     "whatIs": "Questa collezione di testimonianze anonime offre una visione autentica e senza censura della realtà in Venezuela. La nostra piattaforma fornisce uno spazio sicuro affinché le persone possano condividere le loro esperienze e prospettive senza paura di ritorsioni.",
     "error": "Si è verificato un errore nel recuperare le testimonianze. Per favore, riprova più tardi.",
-    "testimonialsCounter": "Testimonianze condivise"
+    "testimonialsCounter": "Testimonianze condivise",
+    "category": {
+      "migration_exile": "Migrazione e Exilio",
+      "repression_violence": "Repressione e Violenza",
+      "living_conditions": "Condizioni di vita",
+      "family_separation": "Separazione familiare",
+      "health_issues": "Problemi di salute",
+      "hopelessness_future": "Speranza e Futuro"
+    }
   },
   "screenShot": {
     "title": "Scarica testimonianza"

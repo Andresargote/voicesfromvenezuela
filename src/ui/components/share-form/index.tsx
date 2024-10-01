@@ -3,12 +3,14 @@ import { useState } from 'react';
 import styles from '../../styles/share-form.module.css';
 import Balancer from 'react-wrap-balancer';
 import { addTestimonial } from '@/src/actions/action';
+import { TestimonialCategory } from '@/src/utils/types';
 
 export function ShareForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [form, setForm] = useState({
     date: new Date().toISOString().split('T')[0],
     testimonial: '',
+    category: '',
   });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -33,11 +35,13 @@ export function ShareForm() {
       await addTestimonial({
         message: form.testimonial,
         date: form.date,
+        category: form.category as TestimonialCategory,
       });
       alert('¡Gracias por compartir tu testimonio! Será revisado y publicado pronto.');
       setForm({
         date: new Date().toISOString().split('T')[0],
         testimonial: '',
+        category: '',
       });
     } catch (error) {
       console.error(error);
@@ -84,6 +88,30 @@ export function ShareForm() {
           });
         }}
       />
+
+      <label htmlFor='category'>Categoría</label>
+      <select
+        id='category'
+        value={form.category}
+        onChange={(event) => {
+          setForm({
+            ...form,
+            category: event.target.value,
+          });
+        }}
+      >
+        <option value=''>Selecciona una categoría</option>
+        <option value={TestimonialCategory.MIGRATION_EXILE}>Migración y exilio</option>
+        <option value={TestimonialCategory.REPRESSION_VIOLENCE}>
+          Represión y violencia
+        </option>
+        <option value={TestimonialCategory.LIVING_CONDITIONS}>Condiciones de vida</option>
+        <option value={TestimonialCategory.FAMILY_SEPARATION}>Separación familiar</option>
+        <option value={TestimonialCategory.HEALTH_ISSUES}>Problemas de salud</option>
+        <option value={TestimonialCategory.HOPELESSNESS_FUTURE}>
+          Sin esperanza y futuro
+        </option>
+      </select>
 
       <button type='submit' disabled={isLoading}>
         {isLoading ? 'Enviando...' : 'Enviar'}

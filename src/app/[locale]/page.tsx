@@ -14,6 +14,7 @@ export default async function Home({
   };
 }) {
   const { locale } = params;
+
   const supabaseClient = createClient();
   const { data, error } = await supabaseClient
     .from('testimonials')
@@ -21,8 +22,10 @@ export default async function Home({
     .filter('status', 'eq', 'approved')
     .order('created_at', { ascending: false });
 
+  const t = await getTranslations('home');
+
   const formattedData = data?.map((d) => ({
-    ...d,
+    id: d.id,
     message: locale === 'es' ? d.message : d[`message_${locale}`],
     formatted_date: new Date(d.created_at).toLocaleDateString(
       locale === 'es' ? 'es-VE' : 'en-US',
@@ -32,9 +35,12 @@ export default async function Home({
         day: 'numeric',
       }
     ),
+    created_at: d.created_at,
+    category:
+      t(`category.${d.category}`) !== 'home.category.null'
+        ? t(`category.${d.category}`)
+        : null,
   }));
-
-  const t = await getTranslations('home');
 
   return (
     <>
