@@ -49,3 +49,30 @@
   font-weight: 400;
   line-height: 160%;
 }
+
+.form .upload button {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+
+  color: var(--color-black);
+  border-style: dashed;
+  border-color: var(--color-blue);
+}
+
+.form .upload input {
+  display: none;
+}
+
+.form .image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.form .remove {
+  all: unset;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-red);
+  color: var(--color-white);
+}

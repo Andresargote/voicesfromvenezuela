@@ -4,14 +4,44 @@ import styles from '../../styles/share-form.module.css';
 import Balancer from 'react-wrap-balancer';
 import { addTestimonial } from '@/src/actions/action';
 import { TestimonialCategory } from '@/src/utils/types';
+import Image from 'next/image';
 
 export function ShareForm() {
   const [isLoading, setIsLoading] = useState(false);
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<{
+    date: string;
+    testimonial: string;
+    category: string;
+    image: {
+      url: string;
+      file: File | null;
+    };
+  }>({
     date: new Date().toISOString().split('T')[0],
     testimonial: '',
     category: '',
+    image: {
+      url: '',
+      file: null,
+    },
   });
+
+  const handleUploadImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const reader = new FileReader();
+    const file = e.target.files?.[0] ?? null;
+
+    reader.onload = function () {
+      setForm({
+        ...form,
+        image: {
+          file: file,
+          url: reader.result as string,
+        },
+      });
+    };
+
+    reader.readAsDataURL(file as Blob);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,6 +72,10 @@ export function ShareForm() {
         date: new Date().toISOString().split('T')[0],
         testimonial: '',
         category: '',
+        image: {
+          url: '',
+          file: null,
+        },
       });
     } catch (error) {
       console.error(error);
@@ -75,6 +109,56 @@ export function ShareForm() {
           });
         }}
       />
+
+      <label htmlFor='image'>Imagen</label>
+      <div className={styles.upload}>
+        <button
+          role='button'
+          type='button'
+          onClick={(e) => {
+            e.preventDefault();
+            const image = document.getElementById('image');
+            image?.click();
+          }}
+          className='p-3 rounded-lg bg-neutral-100'
+        >
+          Sube una imagen
+        </button>
+        <input
+          id='image'
+          type='file'
+          accept='image/*'
+          className='hidden'
+          onChange={handleUploadImage}
+        />
+      </div>
+      {form.image.file && (
+        <div>
+          <Image
+            src={form.image.url}
+            alt='Imagen'
+            className={styles.image}
+            width={272}
+            height={272}
+          />
+          <button
+            className={styles.remove}
+            role='button'
+            type='button'
+            onClick={() => {
+              setForm({
+                ...form,
+                image: {
+                  url: '',
+                  file: null,
+                },
+              });
+            }}
+          >
+            Remover imagen
+          </button>
+        </div>
+      )}
 
       <label htmlFor='testimonial'>Testimonio</label>
       <textarea
