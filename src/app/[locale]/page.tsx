@@ -40,6 +40,7 @@ export default async function Home({
       t(`category.${d.category}`) !== 'home.category.null'
         ? t(`category.${d.category}`)
         : null,
+    image: d.image,
   }));
 
   return (

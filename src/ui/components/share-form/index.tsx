@@ -62,11 +62,48 @@ export function ShareForm() {
         return;
       }
 
-      await addTestimonial({
+      const testimonial = {
         message: form.testimonial,
         date: form.date,
         category: form.category as TestimonialCategory,
-      });
+        image: null,
+      };
+
+      if (form.image.url) {
+        const signature = await fetch('/api/signature').then((r) => r.json());
+
+        if (!signature) {
+          alert('Error al subir la imagen');
+          return;
+        }
+
+        const imageFormData = new FormData();
+        imageFormData.append('file', form.image.file as Blob);
+        imageFormData.append('resource_type', 'image');
+        imageFormData.append('api_key', signature.api_key);
+        imageFormData.append('timestamp', `${signature.timestamp}`);
+        imageFormData.append(
+          'upload_preset',
+          process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET ?? ''
+        );
+        imageFormData.append('signature', signature.signature);
+
+        const imageResponse = await fetch(`${process.env.NEXT_PUBLIC_CLOUDINARY_API}`, {
+          method: 'POST',
+          body: imageFormData,
+        });
+
+        if (!imageResponse.ok) {
+          alert('Error al subir la imagen');
+          return;
+        }
+
+        const imageData = await imageResponse.json();
+
+        testimonial.image = imageData.secure_url;
+      }
+
+      await addTestimonial(testimonial);
       alert('¡Gracias por compartir tu testimonio! Será revisado y publicado pronto.');
       setForm({
         date: new Date().toISOString().split('T')[0],
@@ -78,7 +115,6 @@ export function ShareForm() {
         },
       });
     } catch (error) {
-      console.error(error);
       alert('Ha ocurrido un error al enviar tu testimonio. Por favor, intenta de nuevo.');
     } finally {
       setIsLoading(false);

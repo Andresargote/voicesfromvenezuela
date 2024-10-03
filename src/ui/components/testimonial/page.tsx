@@ -2,6 +2,7 @@ import { merriweather } from '@/src/fonts';
 import Balancer from 'react-wrap-balancer';
 import styles from '../../styles/testimonials.module.css';
 import ScreenShot from '../screen-shot';
+import Image from 'next/image';
 
 type Props = {
   formattedData: {
@@ -10,6 +11,7 @@ type Props = {
     message: string;
     formatted_date: string;
     category: string | null;
+    image: string | null;
   }[];
 };
 
@@ -23,6 +25,15 @@ export function Testimonials({ formattedData }: Props) {
               <p>
                 <Balancer>{d.message}</Balancer>
               </p>
+              {d.image && (
+                <Image
+                  src={d.image}
+                  alt='Imagen del testimonio'
+                  className={styles.testimonial_image}
+                  width={328}
+                  height={328}
+                />
+              )}
             </div>
             <div className={styles.testimonial_footer}>
               <div className={styles.testimonial_footer_info}>

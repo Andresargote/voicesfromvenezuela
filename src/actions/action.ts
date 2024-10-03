@@ -7,10 +7,12 @@ export async function addTestimonial({
   message,
   date,
   category,
+  image,
 }: {
   message: string;
   date: string;
   category: TestimonialCategory;
+  image: string | null;
 }) {
   const supabase = createClient();
 
@@ -19,6 +21,7 @@ export async function addTestimonial({
     created_at: new Date(date).toISOString(),
     status: 'pending',
     category,
+    image,
   });
 
   if (error) {
