@@ -21,7 +21,7 @@ export function Testimonials({ formattedData }: Props) {
       {formattedData?.map((d) => {
         return (
           <li key={d.id} className={styles.testimonial}>
-            <div className={styles.testimonial_content} id={d.id}>
+            <article className={styles.testimonial_content} id={d.id}>
               <p>
                 <Balancer>{d.message}</Balancer>
               </p>
@@ -34,8 +34,8 @@ export function Testimonials({ formattedData }: Props) {
                   height={328}
                 />
               )}
-            </div>
-            <div className={styles.testimonial_footer}>
+            </article>
+            <footer className={styles.testimonial_footer}>
               <div className={styles.testimonial_footer_info}>
                 {d.category && (
                   <span
@@ -49,7 +49,7 @@ export function Testimonials({ formattedData }: Props) {
                 </time>
               </div>
               <ScreenShot elementId={d.id} />
-            </div>
+            </footer>
           </li>
         );
       })}
